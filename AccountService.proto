@@ -2,10 +2,9 @@ syntax = "proto3";
 
 package account_service;
 
-option go_package = "./go/account-service";
+option go_package = "./account_service";
 
 import "google/protobuf/timestamp.proto";
-
 
 message Account {
     int64 id = 1;
