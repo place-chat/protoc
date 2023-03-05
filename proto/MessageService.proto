@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package message_service;
+
+option go_package = "./message_service";
+
+message Message {
+    int64 id = 1;
+    repeated float coords = 2;
+    string text = 3;
+}
+
+message CreateRequest {
+    repeated float coords = 1;
+    string text = 2;
+}
+
+message CreateResponse {
+    string id = 1;
+}
+
+service MessageService {
+    rpc Create(CreateRequest) returns (CreateResponse);
+}

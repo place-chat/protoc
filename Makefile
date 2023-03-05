@@ -1,5 +1,6 @@
-GO_DST := "./go"
-PY_DST := "./python"
+COMPILER := protoc --go_out=./go --python_out=./python ./proto/
 
 protoc-compile:
-	protoc -I=. --go_out=$(GO_DST) --python_out=./$(PY_DST) ./AccountService.proto
+	$(COMPILER)/AccountService.proto
+	$(COMPILER)/MessageService.proto
+
