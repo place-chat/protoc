@@ -29,7 +29,7 @@ class CreateRequest(_message.Message):
     fullname: str
     def __init__(self, telegram_id: _Optional[int] = ..., username: _Optional[str] = ..., fullname: _Optional[str] = ...) -> None: ...
 
-class CreateResponse(_message.Message):
+class CreateReply(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int

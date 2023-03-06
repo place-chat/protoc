@@ -23,7 +23,7 @@ class CreateRequest(_message.Message):
     text: str
     def __init__(self, coords: _Optional[_Iterable[float]] = ..., text: _Optional[str] = ...) -> None: ...
 
-class CreateResponse(_message.Message):
+class CreateReply(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str

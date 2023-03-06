@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproto/MessageService.proto\x12\x0fmessage_service\"3\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0e\n\x06\x63oords\x18\x02 \x03(\x02\x12\x0c\n\x04text\x18\x03 \x01(\t\"-\n\rCreateRequest\x12\x0e\n\x06\x63oords\x18\x01 \x03(\x02\x12\x0c\n\x04text\x18\x02 \x01(\t\"\x1c\n\x0e\x43reateResponse\x12\n\n\x02id\x18\x01 \x01(\t2[\n\x0eMessageService\x12I\n\x06\x43reate\x12\x1e.message_service.CreateRequest\x1a\x1f.message_service.CreateResponseB\x13Z\x11./message_serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproto/MessageService.proto\x12\x0fmessage_service\"3\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0e\n\x06\x63oords\x18\x02 \x03(\x02\x12\x0c\n\x04text\x18\x03 \x01(\t\"-\n\rCreateRequest\x12\x0e\n\x06\x63oords\x18\x01 \x03(\x02\x12\x0c\n\x04text\x18\x02 \x01(\t\"\x19\n\x0b\x43reateReply\x12\n\n\x02id\x18\x01 \x01(\t2X\n\x0eMessageService\x12\x46\n\x06\x43reate\x12\x1e.message_service.CreateRequest\x1a\x1c.message_service.CreateReplyB\x13Z\x11./message_serviceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,8 +26,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_MESSAGE']._serialized_end=98
   _globals['_CREATEREQUEST']._serialized_start=100
   _globals['_CREATEREQUEST']._serialized_end=145
-  _globals['_CREATERESPONSE']._serialized_start=147
-  _globals['_CREATERESPONSE']._serialized_end=175
-  _globals['_MESSAGESERVICE']._serialized_start=177
-  _globals['_MESSAGESERVICE']._serialized_end=268
+  _globals['_CREATEREPLY']._serialized_start=147
+  _globals['_CREATEREPLY']._serialized_end=172
+  _globals['_MESSAGESERVICE']._serialized_start=174
+  _globals['_MESSAGESERVICE']._serialized_end=262
 # @@protoc_insertion_point(module_scope)

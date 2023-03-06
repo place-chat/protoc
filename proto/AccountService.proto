@@ -20,10 +20,10 @@ message CreateRequest {
     string fullname = 3;
 }
 
-message CreateResponse {
+message CreateReply {
     int64 id = 1;
 }
 
 service AccountService {
-    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Create(CreateRequest) returns (CreateReply);
 }

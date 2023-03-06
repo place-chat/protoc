@@ -15,10 +15,10 @@ message CreateRequest {
     string text = 2;
 }
 
-message CreateResponse {
+message CreateReply {
     string id = 1;
 }
 
 service MessageService {
-    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Create(CreateRequest) returns (CreateReply);
 }

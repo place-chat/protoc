@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MessageServiceClient interface {
-	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error)
+	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error)
 }
 
 type messageServiceClient struct {
@@ -33,8 +33,8 @@ func NewMessageServiceClient(cc grpc.ClientConnInterface) MessageServiceClient {
 	return &messageServiceClient{cc}
 }
 
-func (c *messageServiceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateResponse, error) {
-	out := new(CreateResponse)
+func (c *messageServiceClient) Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error) {
+	out := new(CreateReply)
 	err := c.cc.Invoke(ctx, "/message_service.MessageService/Create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -46,7 +46,7 @@ func (c *messageServiceClient) Create(ctx context.Context, in *CreateRequest, op
 // All implementations must embed UnimplementedMessageServiceServer
 // for forward compatibility
 type MessageServiceServer interface {
-	Create(context.Context, *CreateRequest) (*CreateResponse, error)
+	Create(context.Context, *CreateRequest) (*CreateReply, error)
 	mustEmbedUnimplementedMessageServiceServer()
 }
 
@@ -54,7 +54,7 @@ type MessageServiceServer interface {
 type UnimplementedMessageServiceServer struct {
 }
 
-func (UnimplementedMessageServiceServer) Create(context.Context, *CreateRequest) (*CreateResponse, error) {
+func (UnimplementedMessageServiceServer) Create(context.Context, *CreateRequest) (*CreateReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
 func (UnimplementedMessageServiceServer) mustEmbedUnimplementedMessageServiceServer() {}
