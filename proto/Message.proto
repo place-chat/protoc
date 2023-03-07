@@ -10,15 +10,15 @@ message Message {
     string text = 3;
 }
 
-message CreateRequest {
+message MessageCreateRequest {
     repeated float coords = 1;
     string text = 2;
 }
 
-message CreateReply {
+message MessageCreateReply {
     string id = 1;
 }
 
 service MessageService {
-    rpc Create(CreateRequest) returns (CreateReply);
+    rpc MessageCreate(MessageCreateRequest) returns (MessageCreateReply);
 }

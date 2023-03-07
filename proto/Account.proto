@@ -14,16 +14,16 @@ message Account {
     google.protobuf.Timestamp created_at = 5;
 }
 
-message CreateRequest {
+message AccountCreateRequest {
     int64 telegram_id = 1;
     string username = 2;
     string fullname = 3;
 }
 
-message CreateReply {
+message AccountCreateReply {
     int64 id = 1;
 }
 
 service AccountService {
-    rpc Create(CreateRequest) returns (CreateReply);
+    rpc AccountCreate(AccountCreateRequest) returns (AccountCreateReply);
 }
