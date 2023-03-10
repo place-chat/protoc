@@ -1,4 +1,4 @@
-protoc := protoc --go_out=./go --go-grpc_out=./go --python_out=./python --pyi_out=./python ./proto
+protoc := protoc --go_out=./out --go-grpc_out=./out --python_out=./out --pyi_out=./out ./proto
 
 protoc-compile:
 	$(protoc)/Account.proto
