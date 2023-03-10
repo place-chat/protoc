@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/Account.proto\x12\x0f\x61\x63\x63ount_service\x1a\x1fgoogle/protobuf/timestamp.proto\"~\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x0btelegram_id\x18\x02 \x01(\x03\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08\x66ullname\x18\x04 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"O\n\x14\x41\x63\x63ountCreateRequest\x12\x13\n\x0btelegram_id\x18\x01 \x01(\x03\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08\x66ullname\x18\x03 \x01(\t\" \n\x12\x41\x63\x63ountCreateReply\x12\n\n\x02id\x18\x01 \x01(\x03\x32m\n\x0e\x41\x63\x63ountService\x12[\n\rAccountCreate\x12%.account_service.AccountCreateRequest\x1a#.account_service.AccountCreateReplyB\x13Z\x11./account_serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/Account.proto\x12\x0f\x61\x63\x63ount_service\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x0btelegram_id\x18\x02 \x01(\x03\x12\x10\n\x08username\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"=\n\x14\x41\x63\x63ountCreateRequest\x12\x13\n\x0btelegram_id\x18\x01 \x01(\x03\x12\x10\n\x08username\x18\x02 \x01(\t\" \n\x12\x41\x63\x63ountCreateReply\x12\n\n\x02id\x18\x01 \x01(\x03\x32m\n\x0e\x41\x63\x63ountService\x12[\n\rAccountCreate\x12%.account_service.AccountCreateRequest\x1a#.account_service.AccountCreateReplyB\x13Z\x11./account_serviceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z\021./account_service'
   _globals['_ACCOUNT']._serialized_start=73
-  _globals['_ACCOUNT']._serialized_end=199
-  _globals['_ACCOUNTCREATEREQUEST']._serialized_start=201
-  _globals['_ACCOUNTCREATEREQUEST']._serialized_end=280
-  _globals['_ACCOUNTCREATEREPLY']._serialized_start=282
-  _globals['_ACCOUNTCREATEREPLY']._serialized_end=314
-  _globals['_ACCOUNTSERVICE']._serialized_start=316
-  _globals['_ACCOUNTSERVICE']._serialized_end=425
+  _globals['_ACCOUNT']._serialized_end=181
+  _globals['_ACCOUNTCREATEREQUEST']._serialized_start=183
+  _globals['_ACCOUNTCREATEREQUEST']._serialized_end=244
+  _globals['_ACCOUNTCREATEREPLY']._serialized_start=246
+  _globals['_ACCOUNTCREATEREPLY']._serialized_end=278
+  _globals['_ACCOUNTSERVICE']._serialized_start=280
+  _globals['_ACCOUNTSERVICE']._serialized_end=389
 # @@protoc_insertion_point(module_scope)

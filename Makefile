@@ -2,5 +2,4 @@ protoc := protoc --go_out=./go --go-grpc_out=./go --python_out=./python --pyi_ou
 
 protoc-compile:
 	$(protoc)/Account.proto
-	$(protoc)/Message.proto
 
