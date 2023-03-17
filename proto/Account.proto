@@ -10,18 +10,18 @@ message Account {
     int64 id = 1;
     int64 telegram_id = 2;
     string username = 3;
-    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp created_at = 4;
 }
 
-message AccountCreateRequest {
+message CreateRequest {
     int64 telegram_id = 1;
     string username = 2;
 }
 
-message AccountCreateReply {
+message CreateReply {
     int64 id = 1;
 }
 
 service AccountService {
-    rpc AccountCreate(AccountCreateRequest) returns (AccountCreateReply);
+    rpc Create(CreateRequest) returns (CreateReply);
 }
