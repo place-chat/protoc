@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountServiceClient interface {
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error)
+	GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*Account, error)
 }
 
 type accountServiceClient struct {
@@ -42,11 +43,21 @@ func (c *accountServiceClient) Create(ctx context.Context, in *CreateRequest, op
 	return out, nil
 }
 
+func (c *accountServiceClient) GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*Account, error) {
+	out := new(Account)
+	err := c.cc.Invoke(ctx, "/account_service.AccountService/GetByTelegramID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountServiceServer is the server API for AccountService service.
 // All implementations must embed UnimplementedAccountServiceServer
 // for forward compatibility
 type AccountServiceServer interface {
 	Create(context.Context, *CreateRequest) (*CreateReply, error)
+	GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*Account, error)
 	mustEmbedUnimplementedAccountServiceServer()
 }
 
@@ -56,6 +67,9 @@ type UnimplementedAccountServiceServer struct {
 
 func (UnimplementedAccountServiceServer) Create(context.Context, *CreateRequest) (*CreateReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
+func (UnimplementedAccountServiceServer) GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*Account, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByTelegramID not implemented")
 }
 func (UnimplementedAccountServiceServer) mustEmbedUnimplementedAccountServiceServer() {}
 
@@ -88,6 +102,24 @@ func _AccountService_Create_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountService_GetByTelegramID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetByTelegramIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountServiceServer).GetByTelegramID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account_service.AccountService/GetByTelegramID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountServiceServer).GetByTelegramID(ctx, req.(*GetByTelegramIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountService_ServiceDesc is the grpc.ServiceDesc for AccountService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -98,6 +130,10 @@ var AccountService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Create",
 			Handler:    _AccountService_Create_Handler,
+		},
+		{
+			MethodName: "GetByTelegramID",
+			Handler:    _AccountService_GetByTelegramID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

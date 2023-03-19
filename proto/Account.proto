@@ -22,6 +22,11 @@ message CreateReply {
     int64 id = 1;
 }
 
+message GetByTelegramIDRequest {
+    int64 id = 1;
+}
+
 service AccountService {
     rpc Create(CreateRequest) returns (CreateReply);
+    rpc GetByTelegramID(GetByTelegramIDRequest) returns(Account);
 }

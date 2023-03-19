@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/Account.proto\x12\x0f\x61\x63\x63ount_service\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x0btelegram_id\x18\x02 \x01(\x03\x12\x10\n\x08username\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"6\n\rCreateRequest\x12\x13\n\x0btelegram_id\x18\x01 \x01(\x03\x12\x10\n\x08username\x18\x02 \x01(\t\"\x19\n\x0b\x43reateReply\x12\n\n\x02id\x18\x01 \x01(\x03\x32X\n\x0e\x41\x63\x63ountService\x12\x46\n\x06\x43reate\x12\x1e.account_service.CreateRequest\x1a\x1c.account_service.CreateReplyB\x13Z\x11./account_serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/Account.proto\x12\x0f\x61\x63\x63ount_service\x1a\x1fgoogle/protobuf/timestamp.proto\"l\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x13\n\x0btelegram_id\x18\x02 \x01(\x03\x12\x10\n\x08username\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"6\n\rCreateRequest\x12\x13\n\x0btelegram_id\x18\x01 \x01(\x03\x12\x10\n\x08username\x18\x02 \x01(\t\"\x19\n\x0b\x43reateReply\x12\n\n\x02id\x18\x01 \x01(\x03\"$\n\x16GetByTelegramIDRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x32\xae\x01\n\x0e\x41\x63\x63ountService\x12\x46\n\x06\x43reate\x12\x1e.account_service.CreateRequest\x1a\x1c.account_service.CreateReply\x12T\n\x0fGetByTelegramID\x12\'.account_service.GetByTelegramIDRequest\x1a\x18.account_service.AccountB\x13Z\x11./account_serviceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,6 +29,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_CREATEREQUEST']._serialized_end=237
   _globals['_CREATEREPLY']._serialized_start=239
   _globals['_CREATEREPLY']._serialized_end=264
-  _globals['_ACCOUNTSERVICE']._serialized_start=266
-  _globals['_ACCOUNTSERVICE']._serialized_end=354
+  _globals['_GETBYTELEGRAMIDREQUEST']._serialized_start=266
+  _globals['_GETBYTELEGRAMIDREQUEST']._serialized_end=302
+  _globals['_ACCOUNTSERVICE']._serialized_start=305
+  _globals['_ACCOUNTSERVICE']._serialized_end=479
 # @@protoc_insertion_point(module_scope)

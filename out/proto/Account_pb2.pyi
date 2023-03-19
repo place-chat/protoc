@@ -30,3 +30,9 @@ class CreateReply(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
+
+class GetByTelegramIDRequest(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    def __init__(self, id: _Optional[int] = ...) -> None: ...
