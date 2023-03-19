@@ -23,7 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountServiceClient interface {
 	Create(ctx context.Context, in *CreateRequest, opts ...grpc.CallOption) (*CreateReply, error)
-	GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*Account, error)
+	GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*GetByTelegramIDReply, error)
 }
 
 type accountServiceClient struct {
@@ -43,8 +43,8 @@ func (c *accountServiceClient) Create(ctx context.Context, in *CreateRequest, op
 	return out, nil
 }
 
-func (c *accountServiceClient) GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*Account, error) {
-	out := new(Account)
+func (c *accountServiceClient) GetByTelegramID(ctx context.Context, in *GetByTelegramIDRequest, opts ...grpc.CallOption) (*GetByTelegramIDReply, error) {
+	out := new(GetByTelegramIDReply)
 	err := c.cc.Invoke(ctx, "/account_service.AccountService/GetByTelegramID", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -57,7 +57,7 @@ func (c *accountServiceClient) GetByTelegramID(ctx context.Context, in *GetByTel
 // for forward compatibility
 type AccountServiceServer interface {
 	Create(context.Context, *CreateRequest) (*CreateReply, error)
-	GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*Account, error)
+	GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*GetByTelegramIDReply, error)
 	mustEmbedUnimplementedAccountServiceServer()
 }
 
@@ -68,7 +68,7 @@ type UnimplementedAccountServiceServer struct {
 func (UnimplementedAccountServiceServer) Create(context.Context, *CreateRequest) (*CreateReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedAccountServiceServer) GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*Account, error) {
+func (UnimplementedAccountServiceServer) GetByTelegramID(context.Context, *GetByTelegramIDRequest) (*GetByTelegramIDReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByTelegramID not implemented")
 }
 func (UnimplementedAccountServiceServer) mustEmbedUnimplementedAccountServiceServer() {}

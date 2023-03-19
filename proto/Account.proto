@@ -32,5 +32,5 @@ message GetByTelegramIDReply {
 
 service AccountService {
     rpc Create(CreateRequest) returns (CreateReply);
-    rpc GetByTelegramID(GetByTelegramIDRequest) returns(Account);
+    rpc GetByTelegramID(GetByTelegramIDRequest) returns(GetByTelegramIDReply);
 }
