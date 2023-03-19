@@ -36,3 +36,9 @@ class GetByTelegramIDRequest(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
+
+class GetByTelegramIDReply(_message.Message):
+    __slots__ = ["account"]
+    ACCOUNT_FIELD_NUMBER: _ClassVar[int]
+    account: Account
+    def __init__(self, account: _Optional[_Union[Account, _Mapping]] = ...) -> None: ...
