@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package placement_service;
+
+option go_package = "./placement_service";
+
+import "google/protobuf/timestamp.proto";
+
+enum PlacementType {
+    OFFER = 0;
+    ORDER = 1;
+}
+
+message Placement {
+    int64 id = 1;
+    int64 telegram_id = 2;
+    string username = 3;
+    PlacementType typ = 4;
+    string title = 5;
+    string content = 6;
+   
+    google.protobuf.Timestamp created_at = 7; 
+}
+
+message CreateRequest {
+    int64 telegram_id = 1;
+    string username = 2;
+    PlacementType typ = 3;
+    string title = 4;
+    string content = 5;
+}
+
+message CreateReply {
+    int64 id = 1;
+}
+
+service PlacementService {
+    rpc Create(CreateRequest) returns(CreateReply);
+}
