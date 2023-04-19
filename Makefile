@@ -1,5 +1,4 @@
-protoc := protoc --go_out=./out --go-grpc_out=./out --python_out=./out --pyi_out=./out ./proto
+protoc := protoc --go_out=./out --go-grpc_out=./out --python_out=./out --pyi_out=./out
 
 build:
-	$(protoc)/Account.proto
-
+	@bash ./build.sh "$(protoc)"
